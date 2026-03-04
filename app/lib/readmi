@@ -1,0 +1,109 @@
+Quiero que me generes una aplicación Flutter llamada "LevelUp" (App de hábitos con competencia real) con arquitectura offline-first.
+
+REQUISITOS GENERALES:
+- Debe funcionar completamente offline.
+- Usar SQLite para almacenamiento local.
+- Cuando haya conexión a internet, debe sincronizar automáticamente con un backend PHP.
+- Debe tener sistema de XP y ranking.
+- Código organizado en carpetas (models, services, screens, database).
+
+========================
+PARTE FLUTTER
+========================
+
+1) Base de datos local SQLite con estas tablas:
+
+users:
+- id (int)
+- username (text)
+- email (text)
+- xp (int)
+- synced (int default 0)
+
+habits:
+- id (int)
+- user_id (int)
+- title (text)
+- created_at (text)
+
+habit_logs:
+- id (int)
+- habit_id (int)
+- completed_at (text)
+- xp_earned (int)
+- synced (int default 0)
+
+2) Funcionalidades:
+- Registro y login local.
+- Crear hábito.
+- Marcar hábito como completado.
+- Sumar XP automáticamente.
+- Mostrar nivel basado en XP (cada 100 XP = 1 nivel).
+- Pantalla de ranking (cuando haya internet).
+- Sistema de sincronización automática:
+   - Detectar conexión.
+   - Enviar registros no sincronizados.
+   - Marcar como synced = 1 cuando el servidor confirme.
+
+3) Servicios:
+- DatabaseService
+- SyncService
+- ApiService
+- ConnectivityService
+
+4) UI moderna estilo gamer minimalista (colores oscuros, acentos neón).
+
+========================
+PARTE BACKEND PHP
+========================
+
+Crear una API REST en PHP puro (sin framework) compatible con hosting compartido.
+
+Endpoints:
+
+POST /register.php
+POST /login.php
+POST /sync.php
+GET /ranking.php
+
+Base de datos MySQL:
+
+users:
+- id
+- username
+- email
+- password
+- xp
+
+habit_logs:
+- id
+- user_id
+- xp_earned
+- completed_at
+
+Requisitos backend:
+- Responder en JSON.
+- Validar datos.
+- Actualizar XP acumulado.
+- Retornar ranking ordenado por XP descendente.
+- Manejar CORS.
+- Código limpio y comentado.
+
+========================
+SINCRONIZACIÓN
+========================
+
+La app debe:
+- Guardar todo localmente primero.
+- Cuando haya internet, enviar:
+   - nuevos usuarios no sincronizados
+   - nuevos habit_logs no sincronizados
+- El servidor debe devolver confirmación.
+- La app debe actualizar el campo synced.
+
+Genera:
+- Estructura de carpetas.
+- Código base funcional.
+- Ejemplo de conexión HTTP en Flutter.
+- Ejemplo de conexión MySQL en PHP.
+- Script SQL para crear la base de datos.
