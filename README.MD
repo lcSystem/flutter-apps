@@ -1,7 +1,15 @@
 #  Creditos App
 
-Una aplicación móvil moderna y elegante desarrollada con Flutter, diseñada para facilitar la solicitud y gestión de créditos para cooperativas y entidades financieras.
+## Problema
+```
+Muchas cooperativas y entidades financieras todavía manejan las solicitudes de crédito de forma lenta o con sistemas complicados. Esto hace que las personas tengan que llenar mucha información, esperar demasiado tiempo para saber si su crédito fue aprobado y no puedan ver fácilmente el estado de su solicitud.
 
+Además, muchas aplicaciones no permiten que las empresas cambien fácilmente su diseño, colores o información, lo que hace que dependan de programadores para hacer cualquier cambio.
+
+Por eso se creó Creditos App, una aplicación móvil que ayuda a que pedir y gestionar créditos sea más fácil, rápido y organizado. Con esta app los usuarios pueden llenar sus datos paso a paso, simular cuánto pagarían en un crédito y ver el estado de su solicitud. Al mismo tiempo, las cooperativas pueden manejar mejor la información y personalizar la aplicación según su marca.
+
+Una aplicación móvil moderna y elegante desarrollada con Flutter, diseñada para facilitar la solicitud y gestión de créditos para cooperativas y entidades financieras.
+```
 ##  Características Principales
 
 - **Branding Dinámico**: Personalización completa de colores, logos, fondos y mensajes de bienvenida desde el backend.
@@ -80,4 +88,3 @@ flutter build web
 
 ---
 Desarrollado para la gestión financiera inteligente.
-
